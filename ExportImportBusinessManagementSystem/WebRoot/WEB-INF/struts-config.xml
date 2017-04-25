@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="GoodsMasterForm"
+			type="com.yourcompany.struts.form.GoodsMasterForm" />
+		<form-bean name="EmployeMasterForm"
+			type="com.yourcompany.struts.form.EmployeMasterForm" />
+		<form-bean name="CountryMasterForm"
+			type="com.yourcompany.struts.form.CountryMasterForm" />
+		<form-bean name="CourierMasterForm"
+			type="com.yourcompany.struts.form.CourierMasterForm" />
+		<form-bean name="CourierDetailsForm"
+			type="com.yourcompany.struts.form.CourierDetailsForm" />
+		<form-bean name="GoodsDetailsForm"
+			type="com.yourcompany.struts.form.GoodsDetailsForm" />
+		<form-bean name="MobileOperatorMasterForm"
+			type="com.yourcompany.struts.form.MobileOperatorMasterForm" />
+		<form-bean name="MobileCardDetailsForm"
+			type="com.yourcompany.struts.form.MobileCardDetailsForm" />
+		<form-bean name="StampOrderMasterForm"
+			type="com.yourcompany.struts.form.StampOrderMasterForm" />
+		<form-bean name="StampOrderDetailsForm"
+			type="com.yourcompany.struts.form.StampOrderDetailsForm" />
+		<form-bean name="CityMasterForm" type="com.yourcompany.struts.form.CityMasterForm" />
+		<form-bean name="MobileCardSalesForm"
+			type="com.yourcompany.struts.form.MobileCardSalesForm" />
+		<form-bean name="ElectricityBillMasterForm"
+			type="com.yourcompany.struts.form.ElectricityBillMasterForm" />
+		<form-bean name="OrderShipmentMasterForm"
+			type="com.yourcompany.struts.form.OrderShipmentMasterForm" />
+
+	</form-beans>
+
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings>
+		<action path="/ChekUserAction" type="com.iebms.action.CheckUserAction">
+			<forward name="success" path="/Registerform.jsp?status1=_/Available" />
+			<forward name="fail" path="/Registerform.jsp?status1=_/Already Exist" />
+		</action>
+		<action path="/adminhome" type="org.apache.struts.actions.ForwardAction"
+			parameter="/adminhome.jsp" />
+		<action attribute="GoodsMasterForm" name="GoodsMasterForm"
+			parameter="submit" path="/GoodsAction" scope="request"
+			type="com.iebms.action.GoodsAction" validate="false">
+			<forward name="registerFail"
+				path="/Success.jsp?status=Goods   Failed to be Added" />
+			<forward name="registerSuccess" path="/Success.jsp?status=Goods Added Successfully" />
+		</action>
+		<action path="/Goodsmaster" type="org.apache.struts.actions.ForwardAction"
+			parameter="/GoodsMaster.jsp" />
+		<action attribute="GoodsMasterForm" parameter="submit"
+			path="/viewGoodsAction" scope="request" type="com.iebms.action.ViewGoodsAction"
+			validate="false">
+			<forward name="norecords" path="/Success.jsp?status =No Records Found" />
+			<forward name="ViewGoods" path="/ViewGoodsMaster.jsp" />
+		</action>
+		<action attribute="GoodsMasterForm" name="GoodsMasterForm"
+			parameter="submit" path="/updateGoodsAction" scope="request"
+			type="com.iebms.action.UpdateGoodsAction" validate="false">
+			<forward name="updateFail"
+				path="/Success.jsp?status=Goods   Failed to be Updated" />
+			<forward name="updateSuccess"
+				path="/Success.jsp?status=Goods Updated Successfully" />
+		</action>
+		<action path="/deleteGoodsAction" type="com.iebms.action.DeleteGoodsAction">
+			<forward name="deleteFail"
+				path="/Success.jsp?status=Goods   Failed to be deleted" />
+			<forward name="deleteSuccess"
+				path="/Success.jsp?status=Goods Deleted Successfully" />
+
+		</action>
+		<action attribute="CountryMasterForm" name="CountryMasterForm"
+			path="/countryMasterAction" scope="request"
+			type="com.iebms.action.CountryMasterAction" validate="false">
+			<forward name="registerFail"
+				path="/Success.jsp?status=Country   Failed to be Added" />
+			<forward name="registerSuccess"
+				path="/Success.jsp?status=Country Added Successfully" />
+
+		</action>
+		<action path="/countrymaster" type="org.apache.struts.actions.ForwardAction"
+			parameter="/CountryMaster.jsp" />
+		<action path="/viewCountryDetails" type="com.iebms.action.ViewCountryDetails">
+			<forward name="norecords" path="/Success.jsp?status=No Records Found" />
+			<forward name="viewcountrymaster" path="/ViewCountryMaster.jsp" />
+		</action>
+		<action attribute="CountryMasterForm" name="CountryMasterForm"
+			path="/updateCountryAction" scope="request"
+			type="com.iebms.action.UpdateCountryAction" validate="false">
+			<forward name="updateFail"
+				path="/Success.jsp?status=Country   Failed to be Updated" />
+			<forward name="updateSuccess"
+				path="/Success.jsp?status=Country Updated Successfully" />
+
+		</action>
+		<action path="/deleteCountryAction" type="com.iebms.action.DeleteCountryAction">
+			<forward name="deleteFail"
+				path="/Success.jsp?status=Country   Failed to be Deleted" />
+			<forward name="deleteSuccess"
+				path="/Success.jsp?status=Country Deleted Successfully" />
+
+		</action>
+		<action attribute="GoodsDetailsForm" name="GoodsDetailsForm"
+			path="/GoodsDetailsAction" scope="request"
+			type="com.iebms.action.GoodsDetailsAction" validate="false">
+			<forward name="registerFail"
+				path="/Success.jsp?status=Goods Details   Failed to be Added" />
+			<forward name="registerSuccess"
+				path="/Success.jsp?status=Goods Details Added Successfully" />
+
+		</action>
+		<action path="/Goodsdetails" type="org.apache.struts.actions.ForwardAction"
+			parameter="/goodsDetails.jsp" />
+		<action path="/viewGoodsDetailsAction" type="com.iebms.action.ViewGoodsDetailsAction"
+			validate="false">
+			<forward name="norecords" path="/Success.jsp?status=No Records Found" />
+			<forward name="viewGoodsDetails" path="/ViewgoodsDetails.jsp" />
+
+		</action>
+		<action path="/updateGoodsDetailsAction" type="com.iebms.action.UpdateGoodsDetailsAction"
+			validate="false" name="GoodsDetailsForm">
+			<forward name="updateFail"
+				path="/Success.jsp?status=Goods Details   Failed to be Updated" />
+			<forward name="updateSuccess"
+				path="/Success.jsp?status=Goods Details Updated Successfully" />
+
+
+		</action>
+		<action path="/deleteGoodsDetailsAction" type="com.iebms.action.DeleteGoodsDetailsAction">
+			<forward name="deleteFail"
+				path="/Success.jsp?status=Goods Details   Failed to be deleted" />
+			<forward name="deleteSuccess"
+				path="/Success.jsp?status=Goods Details Deleted Successfully" />
+
+		</action>
+		<action attribute="CityMasterForm" name="CityMasterForm" path="/cityAction"
+			scope="request" type="com.iebms.action.CityAction" validate="false">
+			<forward name="registerFail"
+				path="/Success.jsp?status=City Details   Failed to be Added" />
+			<forward name="registerSuccess"
+				path="/Success.jsp?status=City Details Added Successfully" />
+
+		</action>
+		<action path="/citymaster" type="org.apache.struts.actions.ForwardAction"
+			parameter="/CityMaster.jsp" />
+		<action attribute="CityMasterForm" name="CityMasterForm" path="/viewCityAction"
+			scope="request" type="com.iebms.action.ViewCityAction" validate="false">
+			<forward name="norecords" path="/Success.jsp?status=No Records Found" />
+			<forward name="viewCitys" path="/ViewCityMaster.jsp" />
+
+		</action>
+		<action path="/updateCityAction" type="com.iebms.action.updateCityAction"
+			validate="false" name="CityMasterForm">
+			<forward name="updateSuccess" path="/Success.jsp?status=Updation SuccessFully" />
+			<forward name="updateFail" path="/Success.jsp?status=Updation Failed" />
+
+		</action>
+		<action path="/deleteCityAction" type="com.iebms.action.DeleteCityAction"
+			validate="false">
+			<forward name="deleteSuccess" path="/Success.jsp?status=Deletion SuccessFully" />
+			<forward name="deleteFail" path="/Success.jsp?status=Deletion Failed" />
+
+		</action>
+		<action path="/mobileoperatormaster" type="org.apache.struts.actions.ForwardAction"
+			parameter="/MobileOperatorMaster.jsp" />
+		<action path="/RegisterMobileAction" type="com.iebms.action.RegisterMobileAction"
+			name="MobileOperatorMasterForm">
+			<forward name="registerSuccess"
+				path="/Success.jsp?status=Registeration SuccessFully" />
+			<forward name="registerFail" path="/Success.jsp?status=Registeration Failed" />
+
+
+		</action>
+		<action path="/viewMobileOperator" type="com.iebms.action.ViewMobileOperator"
+			validate="false">
+			<forward name="viewMobileOperators" path="/ViewMobileOperatorMaster.jsp" />
+			<forward name="norecords" path="/Success.jsp?status=No Records Found" />
+
+		</action>
+		<action path="/updateMobileOperatorAction" type="com.iebms.action.UpdateMobileOperatorAction"
+			name="MobileOperatorMasterForm">
+			<forward name="updateSuccess" path="/Success.jsp?status=Updation SuccessFully" />
+			<forward name="updateFail" path="/Success.jsp?status=Updation Failed" />
+
+		</action>
+		<action path="/delteMobileOfferAction" type="com.iebms.action.deleteMobileOfferAction">
+			<forward name="deleteSuccess" path="/Success.jsp?status=Deletion SuccessFully" />
+			<forward name="deleteFail" path="/Success.jsp?status=Deletion Failed" />
+
+		</action>
+		<action path="/mobileCardDetails" type="org.apache.struts.actions.ForwardAction"
+			parameter="/MobileCardDetails.jsp" />
+		<action path="/mobileCardAction" type="com.iebms.action.MobileCardAction"
+			name="MobileCardDetailsForm">
+
+			<forward name="registerSuccess"
+				path="/Success.jsp?status=Mobile Card Details is Added SuccessFully" />
+			<forward name="registerFail"
+				path="/Success.jsp?status=Mobile card Details is Failed to Added" />
+
+
+		</action>
+		<action path="/viewMobileCardDetails" type="com.iebms.action.ViewMobileCardDetails">
+			<forward name="viewMobilecarddetails" path="/ViewMobileCardDetails.jsp" />
+			<forward name="norecords" path="/Success.jsp?status=No Records Found" />
+
+		</action>
+		<action attribute="MobileCardDetailsForm" name="MobileCardDetailsForm"
+			path="/updateMobileCardAction" scope="request"
+			type="com.iebms.action.UpdateMobileCardAction">
+			<forward name="updateSuccess"
+				path="/Success.jsp?status=Mobile Card Details is Updated SuccessFully" />
+			<forward name="updateFail"
+				path="/Success.jsp?status=Mobile card Details is Failed to Updated" />
+		</action>
+		<action path="/employeeRegisterAction" type="com.iebms.action.EmployeeRegisterAction"
+			validate="false" name="EmployeMasterForm">
+			<forward name="registerSuccess" path="/Success.jsp?status=Employee Add Successfully" />
+			<forward name="registerFail"
+				path="/Success.jsp?status=Employee Registeration is Failed" />
+
+		</action>
+		<action path="/employeeRegisterForm" type="org.apache.struts.actions.ForwardAction"
+			parameter="/EmployeMaster.jsp" />
+		<action path="/viewEmployeeAction" type="com.iebms.action.ViewEmployeeAction"
+			validate="false">
+			<forward name="viewEmployees" path="/ViewEmployeMaster.jsp" />
+			<forward name="norecords" path="/Success.jsp?status=No Records Found" />
+
+		</action>
+		<action path="/deleteEmployeeAction" type="com.iebms.action.DeleteEmployeeAction"
+			validate="false">
+			<forward name="deleteSuccess"
+				path="/Success.jsp?status=Employee Deleted Successfully" />
+			<forward name="deleteFail"
+				path="/Success.jsp?status=Employee Deleted is Failed" />
+
+		</action>
+		<action path="/userhome" type="org.apache.struts.actions.ForwardAction"
+			parameter="/userhome.jsp" />
+
+		<action path="/viewuserCountryDetails" type="com.iebms.action.UserViewCountryDetails">
+			<forward name="norecords" path="/Success1.jsp?status=No Records Found" />
+			<forward name="viewcountrymaster" path="/UserViewCountryMaster.jsp" />
+		</action>
+		<action attribute="CityMasterForm" name="CityMasterForm" path="/viewUserCityAction"
+			scope="request" type="com.iebms.action.UserViewCityAction" validate="false">
+			<forward name="norecords" path="/Success1.jsp?status=No Records Found" />
+			<forward name="viewCitys" path="/UserViewCityMaster.jsp" />
+
+		</action>
+		<action path="/viewUserGoodsDetailsAction" type="com.iebms.action.UserViewGoodsDetailsAction"
+			validate="false">
+			<forward name="norecords" path="/Success1.jsp?status=No Records Found" />
+			<forward name="viewGoodsDetails" path="/UserViewgoodsDetails.jsp" />
+
+		</action>
+		<action path="/viewOrdersAction" type="com.iebms.action.ViewOrderAction"
+			validate="false">
+			<forward name="norecords" path="/Success1.jsp?status=No Records Found" />
+			<forward name="ViewOrderstaus" path="/UserStampOrderDetails.jsp" />
+
+		</action>
+		<action path="/userviewMobileCardDetails" type="com.iebms.action.UserViewMobileCardDetails">
+			<forward name="viewMobilecarddetails" path="/UserMobileOperatorMaster.jsp" />
+			<forward name="norecords" path="/Success.jsp?status=No Records Found" />
+
+		</action>
+
+		<action path="/electicityBillform" type="org.apache.struts.actions.ForwardAction"
+			parameter="/ElectricityBillMaster.jsp" />
+		<action path="/electricityBillAction" type="com.iebms.action.ElectricityBillAction"
+			validate="false" name="ElectricityBillMasterForm">
+			<forward name="registerFail" path="/Success1.jsp?status=Transaction Failed" />
+			<forward name="registerSuccess"
+				path="/Success1.jsp?status=Transaction Successfully completed" />
+
+		</action>
+		<action path="/viewElectricityBillAction" type="com.iebms.action.ViewElectricityBillAction">
+			<forward name="viewElectrictyBills" path="/ViewElectricityBillMaster.jsp" />
+			<forward name="norecords" path="/Success1.jsp?status=No Records Found" />
+
+		</action>
+		<action path="/viewAdminOrdersAction" type="com.iebms.action.AdminViewOrderAction"
+			validate="false">
+			<forward name="norecords" path="/Success.jsp?status=No Records Found" />
+			<forward name="ViewOrderstaus" path="/AdminStampOrderDetails.jsp" />
+
+		</action>
+		<action path="/orderShipmentAction" type="com.iebms.action.OrderShipmentAction"
+			validate="false" name="OrderShipmentMasterForm">
+			<forward name="registerFail" path="/Success.jsp?status=Order Shipment Failed" />
+			<forward name="registerSuccess"
+				path="/Success.jsp?status=Order Shipment Successfully" />
+
+		</action>
+		<action path="/index" type="org.apache.struts.actions.ForwardAction"
+			parameter="/index.jsp" />
+		<action attribute="GoodsMasterForm" parameter="submit"
+			path="/viewGeneralGoodsAction" scope="request"
+			type="com.iebms.action.GeneralViewGoodsAction" validate="false">
+			<forward name="norecords" path="/Success.jsp?status =No Records Found" />
+			<forward name="ViewGoods" path="/GeneralViewGoodsMaster.jsp" />
+		</action>
+		<action path="/viewgeneralCountryDetails" type="com.iebms.action.GeneralViewCountryDetails">
+			<forward name="norecords" path="/Success.jsp?status=No Records Found" />
+			<forward name="viewcountrymaster" path="/generalViewCountryMaster.jsp" />
+		</action>
+		<action path="/viewgeneralGoodsDetailsAction" type="com.iebms.action.generalViewGoodsDetailsAction"
+			validate="false">
+			<forward name="norecords" path="/Success.jsp?status=No Records Found" />
+			<forward name="viewGoodsDetails" path="/generalViewgoodsDetails.jsp" />
+
+		</action>
+		<action attribute="CityMasterForm" name="CityMasterForm"
+			path="/generalviewCityAction" scope="request"
+			type="com.iebms.action.generalViewCityAction" validate="false">
+			<forward name="norecords" path="/Success.jsp?status=No Records Found" />
+			<forward name="viewCitys" path="/generalViewCityMaster.jsp" />
+
+		</action>
+		<action path="/generalviewMobileOperator" type="com.iebms.action.GeneralViewMobileOperator"
+			validate="false">
+			<forward name="viewMobileOperators" path="/generalViewMobileOperatorMaster.jsp" />
+			<forward name="norecords" path="/Success.jsp?status=No Records Found" />
+
+		</action>
+		<action path="/viewgeneralMobileCardDetails" type="com.iebms.action.generalViewMobileCardDetails">
+			<forward name="viewMobilecarddetails" path="/generalViewMobileCardDetails.jsp" />
+			<forward name="norecords" path="/Success.jsp?status=No Records Found" />
+
+		</action>
+		<action path="/index1" type="org.apache.struts.actions.ForwardAction"
+			parameter="/index1.jsp" />
+		<action path="/employeeLoginAction" type="com.iebms.action.EmployeeLoginAction">
+			<forward name="loginSuccess" path="/EmployeeHome.jsp" />
+			<forward name="loginFail"
+				path="/index1.do?status=Invalid UserName and Password" />
+
+		</action>
+		<action path="/viewOrderShipmentAction" type="com.iebms.action.ViewOrderShipmentAction">
+			<forward name="ordershipmentmaster" path="/ViewOrderShipmentMaster.jsp" />
+			<forward name="norecords" path="/Success2.jsp?status=No Records Found" />
+		</action>
+		<action path="/couriermaster" type="org.apache.struts.actions.ForwardAction"
+			parameter="/CourierMaster.jsp" />
+		<action path="/courierMasterAction" type="com.iebms.action.CourierMasterAction"
+			name="CourierMasterForm">
+			<forward name="registerSuccess"
+				path="/Success1.jsp?status=Courier Request Send SuccessFully" />
+			<forward name="registerFail"
+				path="/Success1.jsp?status=Courier Request Send Failed" />
+
+		</action>
+		<action path="/viewCourierRequest" type="com.iebms.action.ViewCourierRequests">
+			<forward name="ViewCourierRequests" path="/ViewCourierMaster.jsp" />
+			<forward name="norecords" path="/Success1.jsp?status=No Records Found" />
+
+		</action>
+		<action path="/viewAdminCourierRequest" type="com.iebms.action.AdminviewCourierRequests">
+			<forward name="ViewCourierRequests" path="/AdminViewCourierMaster.jsp" />
+			<forward name="norecords" path="/Success.jsp?status=No Records Found" />
+
+		</action>
+		<action path="/updateCourierShipment" type="com.iebms.action.UpdateCourierShipment"
+			validate="false" name="CourierMasterForm">
+			<forward name="updateSuccess"
+				path="/Success.jsp?status=Courier Assigned Successfully" />
+			<forward name="updateFail" path="/Success.jsp?status= Courier Assigned  Failed" />
+
+		</action>
+
+		<action path="/viewEmployeeCourierRequests" type="com.iebms.action.EmployeeviewCourierRequests">
+			<forward name="EmployeeViewCourierRequests" path="/EmployeeViewCourierMaster.jsp" />
+			<forward name="norecords" path="/Success2.jsp?status=No Records Found" />
+
+		</action>
+
+		<action attribute="GoodsMasterForm" parameter="submit"
+			path="/viewEmployeeGoodsAction" scope="request"
+			type="com.iebms.action.EmployeeViewGoodsAction" validate="false">
+			<forward name="norecords" path="/Success2.jsp?status =No Records Found" />
+			<forward name="ViewGoods" path="/EmployeeViewGoodsMaster.jsp" />
+		</action>
+		<action path="/viewEmployeeCountryDetails" type="com.iebms.action.EmployeeViewCountryDetails">
+			<forward name="norecords" path="/Success2.jsp?status=No Records Found" />
+			<forward name="viewcountrymaster" path="/EmployeeViewCountryMaster.jsp" />
+		</action>
+		<action path="/viewEmployeeGoodsDetailsAction" type="com.iebms.action.EmployeeViewGoodsDetailsAction"
+			validate="false">
+			<forward name="norecords" path="/Success2.jsp?status=No Records Found" />
+			<forward name="viewGoodsDetails" path="/EmployeeViewgoodsDetails.jsp" />
+
+		</action>
+		<action attribute="CityMasterForm" name="CityMasterForm"
+			path="/employeeviewCityAction" scope="request"
+			type="com.iebms.action.EmployeeViewCityAction" validate="false">
+			<forward name="norecords" path="/Success2.jsp?status=No Records Found" />
+			<forward name="viewCitys" path="/EmployeeViewCityMaster.jsp" />
+
+		</action>
+		<action path="/employeeviewMobileOperator" type="com.iebms.action.EmployeeViewMobileOperator"
+			validate="false">
+			<forward name="viewMobileOperators" path="/EmployeeViewMobileOperatorMaster.jsp" />
+			<forward name="norecords" path="/Success2.jsp?status=No Records Found" />
+
+		</action>
+		<action path="/viewemployeeMobileCardDetails" type="com.iebms.action.EmployeeViewMobileCardDetails">
+			<forward name="viewMobilecarddetails" path="/EmployeeViewMobileCardDetails.jsp" />
+			<forward name="norecords" path="/Success.jsp?status=No Records Found" />
+
+		</action>
+		<action attribute="volunteerActivitiesModel" path="/adminChangePassword"
+			scope="request" type="com.iebms.action.AdminChangePassword" validate="false"
+			parameter="submit">
+			<forward name="changeSuccess"
+				path="/Success.jsp?status=Password Changed Successfully" />
+			<forward name="changeFail" path="/Success.jsp?status=Password Changed Failed" />
+
+		</action>
+
+		<action path="/adminchangePassword1" type="org.apache.struts.actions.ForwardAction"
+			parameter="/AdminChangepassword.jsp" />
+		<action path="/customerchangePassword1" type="org.apache.struts.actions.ForwardAction"
+			parameter="/CustomerChangepassword.jsp" />
+		<action attribute="volunteerActivitiesModel" path="/customerChangePassword"
+			scope="request" type="com.iebms.action.CustomerChangePassword"
+			validate="false" parameter="submit">
+			<forward name="changeSuccess"
+				path="/Success1.jsp?status=Password Changed Successfully" />
+			<forward name="changeFail" path="/Success1.jsp?status=Password Changed Failed" />
+
+		</action>
+		<action path="/employeeechangePassword1" type="org.apache.struts.actions.ForwardAction"
+			parameter="/EmployeeChangepassword.jsp" />
+		<action attribute="volunteerActivitiesModel" path="/EmployeeChangePassword"
+			scope="request" type="com.iebms.action.EmployeeChangePassword"
+			validate="false" parameter="submit">
+			<forward name="changeSuccess"
+				path="/Success2.jsp?status=Password Changed Successfully" />
+			<forward name="changeFail" path="/Success2.jsp?status=Password Changed Failed" />
+
+		</action>
+
+	</action-mappings>
+	<message-resources parameter="com.yourcompany.struts.ApplicationResources" />
+</struts-config>
+
