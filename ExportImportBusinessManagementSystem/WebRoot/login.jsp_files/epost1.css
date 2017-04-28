@@ -1,0 +1,39 @@
+body {
+	background-image: url(bg2.jpg);
+	background-repeat:repeat-x;
+	margin-left: 10px;
+	margin-top: 0px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+}
+.tdbg {
+	background-image: url(tdbg2.gif);
+	height: 19px;
+	background-repeat: repeat;
+}
+.tdbg1 {
+	background-image: url(tdbg1.gif);
+	height: 144px;
+	background-repeat:no-repeat;
+}
+
+table {
+	width: 100%;
+	margin:0 auto;
+/*	line-height:120%;*/
+
+}
+border {
+border-color:none
+}
+.signup {font:Arial, Helvetica, sans-serif; font-size:22px; color:#000099; font-weight:bold}
+
+.style6 {
+font-family: Arial, Helvetica, sans-serif;
+font-weight:normal;
+text-align: justify;
+color:#000000;
+font-size:12px;
+text-decoration: none;
+}
+

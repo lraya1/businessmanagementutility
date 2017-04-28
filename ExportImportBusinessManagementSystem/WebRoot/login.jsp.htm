@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+
+
+
+
+
+<title>::: Welcome to ePost - email Home Delivery Application :::</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="login.jsp_files/epost1.css" rel="stylesheet" type="text/css">
+<script language="javascript" src="login.jsp_files/apost.js"></script>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#FFFFFF;
+}
+.text{	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;}
+.style1 {color: #000000}
+.style2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color:black;
+	
+}
+.style4 {color: #7A0303}
+.style5 {font-size: 10px}
+.warning {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+}
+-->
+</style>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+window.history.forward(1);
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+<style type="text/css">
+
+#marqueecontainer{
+position: relative;
+width: 212px; /*marquee width */
+height: 120px; /*marquee height */
+background-color: white;
+overflow: hidden;
+border: 2px solid #d40000;
+padding: 2px;
+padding-left: 2px;
+}
+
+.style7 {
+	font-size: 22px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+
+
+body {
+	background-color: #003333;
+}
+</style>
+<script type="text/javascript">
+<!--
+/***********************************************
+* Cross browser Marquee II- © Dynamic Drive (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit http://www.dynamicdrive.com/ for this script and 100s more.
+***********************************************/
+
+var delayb4scroll=1000 //Specify initial delay before marquee starts to scroll on page (2000=2 seconds)
+var marqueespeed=1 //Specify marquee scroll speed (larger is faster 1-10)
+var pauseit=1 //Pause marquee onMousever (0=no. 1=yes)?
+
+////NO NEED TO EDIT BELOW THIS LINE////////////
+
+var copyspeed=marqueespeed
+var pausespeed=(pauseit==0)? copyspeed: 0
+var actualheight=''
+
+function scrollmarquee(){
+if (parseInt(cross_marquee.style.top)>(actualheight*(-1)+8))
+cross_marquee.style.top=parseInt(cross_marquee.style.top)-copyspeed+"px"
+else
+cross_marquee.style.top=parseInt(marqueeheight)+8+"px"
+}
+
+function initializemarquee(){
+cross_marquee=document.getElementById("vmarquee")
+cross_marquee.style.top=0
+marqueeheight=document.getElementById("marqueecontainer").offsetHeight
+actualheight=cross_marquee.offsetHeight
+if (window.opera || navigator.userAgent.indexOf("Netscape/7")!=-1){ //if Opera or Netscape 7x, add scrollbars to scroll and exit
+cross_marquee.style.height=marqueeheight+"px"
+cross_marquee.style.overflow="scroll"
+return
+}
+setTimeout('lefttime=setInterval("scrollmarquee()",40)', delayb4scroll)
+
+}
+
+if (window.addEventListener)
+window.addEventListener("load", initializemarquee, false)
+else if (window.attachEvent)
+window.attachEvent("onload", initializemarquee)
+else if (document.getElementById)
+window.onload=initializemarquee
+
+function checkValidation(){
+	if (document.frmLogin.j_username.value==''){
+	   alert("Enter User Name.");
+	   document.frmLogin.j_username.focus();
+	   return false;
+	}
+   else if (document.frmLogin.j_password.value==''){
+	   alert("Enter Password.");
+	   document.frmLogin.j_password.focus();
+	   return false;
+	}
+	else{
+	  return true;
+	}
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+
+<script language="javascript">
+	imgArr = new Array(5)
+	imgIndex=1;
+		for(i=1;i<=4;i++)
+		{
+			imgArr[i] = new Image();
+			imgArr[i].src="../images/o"+ i +".jpg";
+		}		
+function funChangeNextImage()
+{
+objInter=setInterval("funChangeNext()",6000);
+var loginFormDiv = document.getElementById("loginFormDiv");
+loginFormDiv.style.display= 'block';
+
+
+           
+				document.frmLogin.j_username.focus();
+			
+}
+function funChangeNext()
+	{
+		imgIndex++;
+		if(imgIndex >= "4")
+		{
+			imgIndex=1;
+		}
+		//document.os.src=imgArr[imgIndex].src;		
+	}
+</script> </head><body onload="funChangeNextImage();">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tbody><tr>
+    <td>
+	<table width="100%"> 
+  	<tbody><tr> 
+  	<td><img src="images/epostoffice.gif"></td> 	
+	<td align="right"><img src="login.jsp_files/indiapost.gif"></td>
+	</tr>
+	</tbody></table>
+	</td>
+  </tr>
+
+  
+  <tr valign="top"> 
+    <td class="tdbg"></td> 
+  </tr> 
+  <tr bgcolor="#666699">
+    <td height="84"><jsp:include page="Adminoptions.jsp"/></td>
+  </tr>
+  <tr valign="top"> 
+    <td background="login.jsp_files/bottom_line.gif" height="368"></td> 
+  </tr> 
+  <tr> 
+    <td class="style1 style5" align="center">Conceived and Developed by National Informatics Center (NIC)<br> 
+      <img src="login.jsp_files/nic_logo.gif" alt="" border="0" width="113" height="34"></td> 
+  </tr> 
+</tbody></table>
+<map name="Map2"> 
+  <area shape="rect" coords="16,2,106,15" href="#" alt="Help on Fonts"> 
+  <area shape="rect" coords="133,2,297,15" href="#" alt="Keyboard Map Help on Fonts"> 
+</map>
+</body></html>
