@@ -117,7 +117,7 @@ body {
 																<div align="center">
 																	<strong>ItemRegDate</strong>
 																</div>
-															</td>
+															</td><!--
 
 															<td>
 																<div align="center">
@@ -129,7 +129,7 @@ body {
 																	<strong>Item Video</strong>
 																</div>
 															</td>
-															<td>
+															--><td>
 																<div align="center">
 																	<strong>Item Desc</strong>
 																</div>
@@ -168,7 +168,7 @@ body {
 																<span class="style3"><strong><%=form.getItemRegDate()%></strong>
 																</span>
 															</td>
-															<td>
+															<!--<td>
 																<img src="images/<%=form.getItemImage()%>" width=50
 																	height=50>
 															</td>
@@ -178,7 +178,7 @@ body {
 																</strong>
 																</span>
 															</td>
-															<td>
+															--><td>
 																<span class="style3"><strong><%=form.getItemDesc()%></strong>
 																</span>
 															</td>

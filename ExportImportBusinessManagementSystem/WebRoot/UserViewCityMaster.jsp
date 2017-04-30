@@ -21,7 +21,7 @@ body {
 }
 .style2 {    color: black}
 </style>
-<title>EPost- Office</title>
+<title>ExportImportBusinessManagementSystem</title>
 <script type="text/javascript" src="scripts/moveclock.js"></script>
 
 
@@ -34,7 +34,7 @@ body {
 </tr>
 <tr>
    <td bgcolor="skyblue">
-   <jsp:include page="UserOptions.jsp"/>
+   <jsp:include page="./Header.jsp" />
    </td></tr>
 <tr><td>
 <%--<div align="center">--%>
@@ -69,8 +69,8 @@ Enumeration en=cl.elements();
 <tr bgcolor="white">
 <td><div align="center" class="style2"><strong><font color="black"><strong>CityName </strong></font></strong></div></td>      
 <td><div align="center" class="style2"><strong><font color="black"><strong>Abbr</strong></font></strong></div></td>           
-<td><div align="center" class="style2"><strong><font color="black"><strong>CityMap</strong></font></strong></div></td>        
-<td><div align="center" class="style2"><strong><font color="black"><strong>Desc</strong></font></strong></div></td>
+<!--<td><div align="center" class="style2"><strong><font color="black"><strong>CityMap</strong></font></strong></div></td>        
+--><td><div align="center" class="style2"><strong><font color="black"><strong>Desc</strong></font></strong></div></td>
 <td><div align="center" class="style2"><strong><font color="black"><strong>CountryName</strong></font></strong></div></td>
 </tr>
 <%while(en.hasMoreElements())
@@ -79,9 +79,9 @@ CityMasterForm form=(CityMasterForm)en.nextElement();
  %>
  <tr bgcolor="skyblue">
  <td><font color="black"><%=form.getCityName() %></font></td>
- <td><span class="style1"><font color="black"><%=form.getAbbr() %></font></span></td>
+ <td><span class="style1"><font color="black"><%=form.getAbbr() %></font></span></td><!--
  <td><img src="images/<%=form.getCityMap() %>" width=50 height=50></td>
- <td><span class="style1"><font color="black"><%=form.getDescription() %></font></span></td>
+ --><td><span class="style1"><font color="black"><%=form.getDescription() %></font></span></td>
  <td><span class="style1"><font color="black"><%=form.getCountryname() %></font></span></td></tr>
  <%} }catch(Exception e)
  {

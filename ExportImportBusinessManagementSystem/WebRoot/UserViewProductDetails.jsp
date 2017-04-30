@@ -21,7 +21,7 @@ body {
 }
 </style>
 
-		<title>EPost- Office</title>
+		<title>ExportImportBusinessManagementSystem</title>
 		<script type="text/javascript" src="scripts/moveclock.js">
 </script>
 
@@ -105,7 +105,7 @@ function validate() {
 																<div align="center">
 																	<strong>ItemRegDate</strong>
 																</div>
-															</td>
+															</td><!--
 
 															<td>
 																<div align="center">
@@ -117,7 +117,7 @@ function validate() {
 																	<strong>Item Video</strong>
 																</div>
 															</td>
-															<td>
+															--><td>
 																<div align="center">
 																	<strong>Item Desc</strong>
 																</div>
@@ -153,7 +153,7 @@ function validate() {
 																<span class="style3"><strong><%=form.getItemRegDate() %></strong>
 																</span>
 															</td>
-															<td>
+															<!--<td>
 																<img src="images/<%=form.getItemImage() %>" width=50
 																	height=50>
 															</td>
@@ -161,7 +161,7 @@ function validate() {
 																<span class="style3"><strong><%=form.getItemLaunchVideo() %></strong>
 																</span>
 															</td>
-															<td>
+															--><td>
 																<span class="style3"><strong><%=form.getItemDesc() %></strong>
 																</span>
 															</td>

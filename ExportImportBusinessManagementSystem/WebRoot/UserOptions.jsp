@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Nepal Banking Online Services</title>
+		<title>ExportImportBusinessManagement</title>
 		<meta name="Author" content="Stu Nicholls" />
 
 		<link rel="stylesheet" type="text/css" href="./css/pro_drop_1.css" />
@@ -33,24 +33,27 @@
 				<a href="#nogo22" id="services" class="top_link"><span
 					class="down">Goods</span> </a>
 				<ul class="sub">
-					<li>
+					<!--<li>
 						<a href="./ViewCart.jsp">view Cart</a>
 					</li>
 					<li>
 						<a href="./viewOrdersAction.do">view Order</a>
 					</li>
-					<li>
+					--><li>
 						<a href="./couriermaster.do">Courier Request</a>
 					</li>
 					<li>
 						<a href="./viewCourierRequest.do">ViewCourierRequests</a>
 					</li>
-					<li>
-						<a href="./viewCityAction.do">View Cities</a>
+										<li>
+						<a href="./viewEmployeeGoodsAction.do">Goods</a>
 					</li>
+					<li>
+						<a href="./viewEmployeeGoodsDetailsAction.do">GoodsDetails</a>
+					</li>
+					
 				</ul>
 			</li>
-
 			<li class="top">
 				<a href="#nogo22" id="services" class="top_link"><span
 					class="down">Bills</span> </a>
@@ -59,7 +62,7 @@
 						<a href="./electicityBillform.do">Pay Bill</a>
 					</li>
 					<li>
-						<a href="./viewElectricityBillAction.do">View Bill</a>
+						<a href="./viewBillAction.do">View Bill</a>
 					</li>
 				</ul>
 			</li>
